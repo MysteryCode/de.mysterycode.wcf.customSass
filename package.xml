@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="de.mysterycode.wcf.customScss" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
+	<packageinformation>
+		<packagename><![CDATA[Custom Scss]]></packagename>
+		<packagedescription><![CDATA[Implements a form to save custom scss for every style]]></packagedescription>
+		
+		<version>1.0.0 Beta 2</version>
+		<date>2016-06-26</date>
+	</packageinformation>
+	
+	<authorinformation>
+		<author><![CDATA[Florian Gail]]></author>
+		<authorurl><![CDATA[http://www.mysterycode.de]]></authorurl>
+	</authorinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="3.0.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
+	</requiredpackages>
+	
+	<instructions type="install">
+		<instruction type="acpTemplate">acpTemplate.tar</instruction>
+		<instruction type="file">files.tar</instruction>
+		
+		<instruction type="language">language/*.xml</instruction>
+		<instruction type="acpMenu">acpMenu.xml</instruction>
+		
+		<instruction type="script">acp/install_de.mysterycode.wcf.customSass.php</instruction>
+	</instructions>
+</package>
