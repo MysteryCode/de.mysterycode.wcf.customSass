@@ -1,12 +1,12 @@
-Benutzerdefiniertes SASS
+Benutzerdefiniertes SCSS
 ================================
-Identifier: de.mysterycode.wcf.customSass
+Identifier: de.mysterycode.wcf.customScss
 
-Fügen Sie bequem Sass-Anweisungen global ein, ohne jeden Stil einzeln bearbeiten zu müssen.
+Fügen Sie bequem Scss-Anweisungen global ein, ohne jeden Stil einzeln bearbeiten zu müssen.
 
 Status
 ----------------
-[![Build Status](https://travis-ci.org/MysteryCode/de.mysterycode.wcf.customSass.svg?branch=master)](https://travis-ci.org/MysteryCode/de.mysterycode.wcf.customSass)
+[![Build Status](https://travis-ci.org/MysteryCode/de.mysterycode.wcf.customScss.svg?branch=master)](https://travis-ci.org/MysteryCode/de.mysterycode.wcf.customScss)
 
 License
 ----------------
