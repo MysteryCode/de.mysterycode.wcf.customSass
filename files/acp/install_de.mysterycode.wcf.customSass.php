@@ -14,7 +14,7 @@ if (file_exists($fileName)) {
 	$output .= "*/\n";
 	
 	if (!empty($lineArray) && !empty($content)) {
-		$file = FileUtil::getRealPath(WCF_DIR) . 'style/custom_mysterycode.scss';
+		$file = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
 		file_put_contents($file, $output);
 	}
 }

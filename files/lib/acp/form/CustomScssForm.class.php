@@ -50,7 +50,7 @@ class CustomScssForm extends AbstractForm {
 	public function save() {
 		parent::save();
 		
-		$file = FileUtil::getRealPath(WCF_DIR) . 'style/custom_mysterycode.scss';
+		$file = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
 		
 		$string = '';
 		
@@ -84,7 +84,7 @@ class CustomScssForm extends AbstractForm {
 	public function readData() {
 		parent::readData();
 		
-		$file = FileUtil::getRealPath(WCF_DIR) . 'style/custom_mysterycode.scss';
+		$file = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
 		
 		if (file_exists($file)) {
 			$this->customScss = file_get_contents($file);
