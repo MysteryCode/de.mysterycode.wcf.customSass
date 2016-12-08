@@ -12,6 +12,10 @@
 		<author><![CDATA[Florian Gail]]></author>
 		<authorurl><![CDATA[https://www.mysterycode.de]]></authorurl>
 	</authorinformation>
+
+	<excludedpackages>
+		<excludedpackage version="3.1.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></excludedpackage>
+	</excludedpackages>
 	
 	<requiredpackages>
 		<requiredpackage minversion="3.0.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
