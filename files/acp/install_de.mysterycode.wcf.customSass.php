@@ -2,7 +2,7 @@
 
 use wcf\util\FileUtil;
 
-$fileName = FileUtil::getRealPath(WCF_DIR) . 'style/custom_mysterycode.less';
+$fileName = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
 if (file_exists($fileName)) {
 	$content = file_get_contents($fileName);
 	$lineArray = explode("\n", $content);
