@@ -1,7 +1,6 @@
 <?php
 
 namespace wcf\acp\form;
-use wcf\data\style\Style;
 use wcf\data\style\StyleList;
 use wcf\form\AbstractForm;
 use wcf\system\style\StyleHandler;
