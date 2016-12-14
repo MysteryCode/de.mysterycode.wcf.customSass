@@ -4,8 +4,8 @@
 		<packagename><![CDATA[Custom Scss]]></packagename>
 		<packagedescription><![CDATA[Implements a form to save custom scss for every style]]></packagedescription>
 		
-		<version>1.0.0</version>
-		<date>2016-12-08</date>
+		<version>1.0.1</version>
+		<date>2016-12-15</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -18,7 +18,7 @@
 	</excludedpackages>
 	
 	<requiredpackages>
-		<requiredpackage minversion="3.0.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
+		<requiredpackage minversion="3.0.0 RC 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -31,7 +31,7 @@
 		<instruction type="script">acp/install_de.mysterycode.wcf.customSass.php</instruction>
 	</instructions>
 
-	<instructions type="update" fromversion="1.0.0 Beta *">
+	<instructions type="update" fromversion="1.0.0">
 		<instruction type="acpTemplate">acpTemplate.tar</instruction>
 		<instruction type="file">files.tar</instruction>
 	</instructions>
