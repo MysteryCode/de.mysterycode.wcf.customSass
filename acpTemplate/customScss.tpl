@@ -19,7 +19,11 @@
 				<small>{lang}wcf.acp.style.advanced.individualScss.description{/lang}</small>
 			</dd>
 		</dl>
-		{include file='codemirror' codemirrorMode='text/x-less' codemirrorSelector='#individualScss'}
+		{if !'ACE_THEME'|defined}
+			{include file='codemirror' codemirrorMode='text/x-less' codemirrorSelector='#individualScss' sandbox=true}
+		{else}
+			{include file='ace' aceMode='scss' aceSelector='individualScss' sandbox=true}
+		{/if}
 
 		{event name='fieldsets'}
 	</section>
