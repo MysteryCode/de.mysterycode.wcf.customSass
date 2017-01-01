@@ -37,6 +37,12 @@ class CustomScssForm extends AbstractForm {
 	 * @var	string
 	 */
 	public $customScss = '';
+
+	/**
+	 * compile-error
+	 * @var null
+	 */
+	protected $error = null;
 	
 	/**
 	 * @inheritDoc
@@ -53,6 +59,12 @@ class CustomScssForm extends AbstractForm {
 	public function validate() {
 		parent::validate();
 
+		ExtendedStyleCompiler::getInstance()->setSkipStyleScss(true);
+		ExtendedStyleCompiler::getInstance()->setIndividualSCSS($this->customScss);
+		ExtendedStyleCompiler::getInstance()->setExcludeFiles([
+			WCF_DIR . 'style/ui/customMysterycode.scss'
+		]);
+		
 		if (!empty($this->customScss)) {
 			$styleList = new StyleList();
 			$styleList->readObjects();
@@ -62,6 +74,7 @@ class CustomScssForm extends AbstractForm {
 				ExtendedStyleCompiler::getInstance()->compileACP();
 			}
 			catch (SystemException $e) {
+				$this->error = $e;
 				throw new UserInputException('individualScss', 'inValid');
 			}
 
@@ -70,6 +83,7 @@ class CustomScssForm extends AbstractForm {
 					ExtendedStyleCompiler::getInstance()->compile($style);
 				}
 				catch (SystemException $e) {
+					$this->error = $e;
 					throw new UserInputException('individualScss', 'inValid');
 				}
 			}
@@ -116,10 +130,12 @@ class CustomScssForm extends AbstractForm {
 	public function readData() {
 		parent::readData();
 		
-		$file = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
-		
-		if (file_exists($file)) {
-			$this->customScss = file_get_contents($file);
+		if (empty($_POST)) {
+			$file = FileUtil::getRealPath(WCF_DIR) . 'style/ui/customMysterycode.scss';
+
+			if (file_exists($file)) {
+				$this->customScss = file_get_contents($file);
+			}
 		}
 	}
 	
@@ -130,7 +146,8 @@ class CustomScssForm extends AbstractForm {
 		parent::assignVariables();
 		
 		WCF::getTPL()->assign(array(
-			'individualScss' => $this->customScss
+			'individualScss' => $this->customScss,
+			'error' => $this->error
 		));
 	}
 }

@@ -16,6 +16,25 @@ use wcf\util\StringUtil;
  */
 class ExtendedStyleCompiler extends StyleCompiler {
 	/**
+	 * SCSS to check
+	 * @var string
+	 */
+	protected $individualScss = '';
+
+	/**
+	 * filenames to exclude
+	 * exclude the file that should be overridden after successfully comile
+	 * @var string[]
+	 */
+	protected $excludeFiles = [];
+
+	/**
+	 * skips the individual style of the style
+	 * @var boolean
+	 */
+	protected $skipStyleSCSS = false;
+
+	/**
 	 * @inheritDoc
 	 */
 	protected function compileStylesheet($filename, array $files, array $variables, $individualScss, callable $callback) {
@@ -49,12 +68,20 @@ class ExtendedStyleCompiler extends StyleCompiler {
 		// build SCSS bootstrap
 		$scss = $this->bootstrap($variables);
 		foreach ($files as $file) {
+			if (!empty($this->excludeFiles) && in_array($file, $this->excludeFiles)) {
+				continue;
+			}
 			$scss .= $this->prepareFile($file);
 		}
 
 		// append individual CSS/SCSS
-		if ($individualScss) {
+		if ($individualScss && !$this->individualScss) {
 			$scss .= $individualScss;
+		}
+
+		// append scss that should be checked
+		if (!empty($this->individualScss)) {
+			$scss .= $this->individualScss;
 		}
 
 		try {
@@ -64,5 +91,30 @@ class ExtendedStyleCompiler extends StyleCompiler {
 		catch (\Exception $e) {
 			throw new SystemException("Could not compile SCSS: ".$e->getMessage(), 0, '', $e);
 		}
+	}
+
+	/**
+	 * set exclude patterns
+	 *
+*@param array $excludeFiles
+	 */
+	public function setExcludeFiles(array $excludeFiles) {
+		$this->excludeFiles = $excludeFiles;
+	}
+
+	/**
+	 * set scss to compile with everything
+	 * @param string $scss
+	 */
+	public function setIndividualSCSS($scss) {
+		$this->individualScss = $scss;
+	}
+
+	/**
+	 * set true if you want to exclude the styles individual SCSS
+	 * @param $value
+	 */
+	public function setSkipStyleScss($value) {
+		$this->skipStyleSCSS = $value;
 	}
 }
