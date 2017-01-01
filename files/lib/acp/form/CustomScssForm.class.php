@@ -19,12 +19,12 @@ use wcf\util\StringUtil;
  */
 class CustomScssForm extends AbstractForm {
 	/**
-	 * @see	\wcf\page\AbstractPage::$activeMenuItem
+	 * @inheritDoc
 	 */
 	public $activeMenuItem = 'wcf.acp.menu.link.style.customScss';
 	
 	/**
-	 * @see	\wcf\page\AbstractPage::$neededPermissions
+	 * @inheritDoc
 	 */
 	public $neededPermissions = array('admin.style.canManageStyle');
 	
@@ -35,7 +35,7 @@ class CustomScssForm extends AbstractForm {
 	public $customScss = '';
 	
 	/**
-	 * @see	\wcf\form\IForm::readFormParameters()
+	 * @inheritDoc
 	 */
 	public function readFormParameters() {
 		parent::readFormParameters();
@@ -44,7 +44,7 @@ class CustomScssForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\form\IForm::save()
+	 * @inheritDoc
 	 */
 	public function save() {
 		parent::save();
@@ -78,7 +78,7 @@ class CustomScssForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\form\IForm::readData()
+	 * @inheritDoc
 	 */
 	public function readData() {
 		parent::readData();
@@ -91,7 +91,7 @@ class CustomScssForm extends AbstractForm {
 	}
 	
 	/**
-	 * @see	\wcf\page\IPage::assignVariables()
+	 * @inheritDoc
 	 */
 	public function assignVariables() {
 		parent::assignVariables();
