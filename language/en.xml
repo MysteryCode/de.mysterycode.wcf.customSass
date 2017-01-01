@@ -3,4 +3,7 @@
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.style.customScss"><![CDATA[Global Scss]]></item>
 	</category>
+	<category name="wcf.acp.style">
+		<item name="wcf.acp.style.error.inValid">The SCSS-code produces an error while compiling.</item>
+	</category>
 </language>

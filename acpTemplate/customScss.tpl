@@ -17,6 +17,15 @@
 			<dd>
 				<textarea id="individualScss" rows="20" cols="40" name="individualScss">{$individualScss}</textarea>
 				<small>{lang}wcf.acp.style.advanced.individualScss.description{/lang}</small>
+				{if $errorField == 'serverIDs'}
+					<small class="innerError">
+						{if $errorType == 'empty'}
+							{lang}wcf.global.form.error.empty{/lang}
+						{else}
+							{lang}wcf.acp.style.error.{$errorType}{/lang}
+						{/if}
+					</small>
+				{/if}
 			</dd>
 		</dl>
 		{if !'ACE_THEME'|defined}

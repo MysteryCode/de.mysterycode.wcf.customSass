@@ -1,8 +1,12 @@
 <?php
 
 namespace wcf\acp\form;
+
 use wcf\data\style\StyleList;
 use wcf\form\AbstractForm;
+use wcf\system\exception\SystemException;
+use wcf\system\exception\UserInputException;
+use wcf\system\style\ExtendedStyleCompiler;
 use wcf\system\style\StyleHandler;
 use wcf\system\WCF;
 use wcf\util\FileUtil;
@@ -42,7 +46,36 @@ class CustomScssForm extends AbstractForm {
 		
 		if (isset($_POST['individualScss'])) $this->customScss = StringUtil::trim($_POST['individualScss']);
 	}
-	
+
+	/**
+	 * @inheritDoc
+	 */
+	public function validate() {
+		parent::validate();
+
+		if (!empty($this->customScss)) {
+			$styleList = new StyleList();
+			$styleList->readObjects();
+			$styles = $styleList->getObjects();
+
+			try {
+				ExtendedStyleCompiler::getInstance()->compileACP();
+			}
+			catch (SystemException $e) {
+				throw new UserInputException('individualScss', 'inValid');
+			}
+
+			foreach ($styles as $style) {
+				try {
+					ExtendedStyleCompiler::getInstance()->compile($style);
+				}
+				catch (SystemException $e) {
+					throw new UserInputException('individualScss', 'inValid');
+				}
+			}
+		}
+	}
+
 	/**
 	 * @inheritDoc
 	 */
