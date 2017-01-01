@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <package name="de.mysterycode.wcf.customScss" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
-		<packagename><![CDATA[Custom Scss]]></packagename>
-		<packagedescription><![CDATA[Implements a form to save custom scss for every style]]></packagedescription>
+		<packagename><![CDATA[Custom SCSS]]></packagename>
+		<packagedescription><![CDATA[Implements a form to save custom SCSS for every style]]></packagedescription>
 		
-		<version>1.0.1</version>
-		<date>2016-12-15</date>
+		<version>1.0.2</version>
+		<date>2017-01-01</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -23,16 +23,22 @@
 
 	<instructions type="install">
 		<instruction type="acpTemplate">acpTemplate.tar</instruction>
-		<instruction type="file">files.tar</instruction>
+		<instruction type="file" />
 
-		<instruction type="language">language/*.xml</instruction>
-		<instruction type="acpMenu">acpMenu.xml</instruction>
+		<instruction type="language" />
+		<instruction type="acpMenu" />
 
 		<instruction type="script">acp/install_de.mysterycode.wcf.customSass.php</instruction>
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.0">
-		<instruction type="acpTemplate">acpTemplate.tar</instruction>
-		<instruction type="file">files.tar</instruction>
+		<instruction type="acpTemplate" />
+		<instruction type="file" />
+		<instruction type="language" />
+	</instructions>
+	<instructions type="update" fromversion="1.0.1">
+		<instruction type="acpTemplate" />
+		<instruction type="file" />
+		<instruction type="language" />
 	</instructions>
 </package>
