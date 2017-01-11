@@ -2,10 +2,12 @@
 <package name="de.mysterycode.wcf.customScss" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/package.xsd">
 	<packageinformation>
 		<packagename><![CDATA[Custom SCSS]]></packagename>
+		<packagename language="de"><![CDATA[Benutzerdefiniertes SCSS]]></packagename>
 		<packagedescription><![CDATA[Implements a form to save custom SCSS for every style]]></packagedescription>
+		<packagedescription language="de"><![CDATA[Implementiert ein Formular zum Speichern von benutzerdefiniertem SCSS.]]></packagedescription>
 		
-		<version>1.0.2</version>
-		<date>2017-01-01</date>
+		<version>1.0.3</version>
+		<date>2017-01-11</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -18,7 +20,7 @@
 	</excludedpackages>
 	
 	<requiredpackages>
-		<requiredpackage minversion="3.0.0 RC 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
+		<requiredpackage minversion="3.0.0"><![CDATA[com.woltlab.wcf]]></requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -33,12 +35,17 @@
 
 	<instructions type="update" fromversion="1.0.0">
 		<instruction type="acpTemplate" />
-		<instruction type="file" />
+		<instruction type="file">files_update.tar</instruction>
 		<instruction type="language" />
 	</instructions>
 	<instructions type="update" fromversion="1.0.1">
 		<instruction type="acpTemplate" />
-		<instruction type="file" />
+		<instruction type="file">files_update.tar</instruction>
+		<instruction type="language" />
+	</instructions>
+	<instructions type="update" fromversion="1.0.2">
+		<instruction type="acpTemplate" />
+		<instruction type="file">files_update.tar</instruction>
 		<instruction type="language" />
 	</instructions>
 </package>

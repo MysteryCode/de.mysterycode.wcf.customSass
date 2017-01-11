@@ -4,6 +4,6 @@
 		<item name="wcf.acp.menu.link.style.customScss"><![CDATA[Global SCSS]]></item>
 	</category>
 	<category name="wcf.acp.style">
-		<item name="wcf.acp.style.error.inValid">The SCSS-code produces an error while compiling.</item>
+		<item name="wcf.acp.style.error.inValid">The SCSS-code produces the following error while compiling: {if !$error|empty}{@$error->getMessage()}{/if}</item>
 	</category>
 </language>
