@@ -6,8 +6,8 @@
 		<packagedescription><![CDATA[Implements a form to save custom SCSS for every style]]></packagedescription>
 		<packagedescription language="de"><![CDATA[Implementiert ein Formular zum Speichern von benutzerdefiniertem SCSS.]]></packagedescription>
 		
-		<version>1.0.3</version>
-		<date>2017-01-11</date>
+		<version>1.1.0 Alpha 1</version>
+		<date>2017-09-03</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -15,13 +15,13 @@
 		<authorurl><![CDATA[https://www.mysterycode.de]]></authorurl>
 	</authorinformation>
 
-	<excludedpackages>
-		<excludedpackage version="3.1.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></excludedpackage>
-	</excludedpackages>
-	
 	<requiredpackages>
-		<requiredpackage minversion="3.0.0"><![CDATA[com.woltlab.wcf]]></requiredpackage>
+		<requiredpackage minversion="3.1.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></requiredpackage>
 	</requiredpackages>
+
+	<excludedpackages>
+		<excludedpackage version="3.2.0 Alpha 1"><![CDATA[com.woltlab.wcf]]></excludedpackage>
+	</excludedpackages>
 
 	<instructions type="install">
 		<instruction type="acpTemplate" />
@@ -29,21 +29,9 @@
 
 		<instruction type="language" />
 		<instruction type="acpMenu" />
-
-		<instruction type="script">acp/install_de.mysterycode.wcf.customSass.php</instruction>
 	</instructions>
 
-	<instructions type="update" fromversion="1.0.0">
-		<instruction type="acpTemplate" />
-		<instruction type="file">files_update.tar</instruction>
-		<instruction type="language" />
-	</instructions>
-	<instructions type="update" fromversion="1.0.1">
-		<instruction type="acpTemplate" />
-		<instruction type="file">files_update.tar</instruction>
-		<instruction type="language" />
-	</instructions>
-	<instructions type="update" fromversion="1.0.2">
+	<instructions type="update" fromversion="1.0.3">
 		<instruction type="acpTemplate" />
 		<instruction type="file">files_update.tar</instruction>
 		<instruction type="language" />

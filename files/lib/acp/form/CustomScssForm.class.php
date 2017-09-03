@@ -3,7 +3,6 @@
 namespace wcf\acp\form;
 
 use wcf\data\style\StyleList;
-use wcf\form\AbstractForm;
 use wcf\system\exception\SystemException;
 use wcf\system\exception\UserInputException;
 use wcf\system\style\ExtendedStyleCompiler;
@@ -21,7 +20,7 @@ use wcf\util\StringUtil;
  * @package	de.mysterycode.wcf.customScss
  * @category	WCF
  */
-class CustomScssForm extends AbstractForm {
+class CustomScssForm extends AbstractAcpForm {
 	/**
 	 * @inheritDoc
 	 */
@@ -30,7 +29,7 @@ class CustomScssForm extends AbstractForm {
 	/**
 	 * @inheritDoc
 	 */
-	public $neededPermissions = array('admin.style.canManageStyle');
+	public $neededPermissions = ['admin.style.canManageStyle'];
 	
 	/**
 	 * custom scss
@@ -40,7 +39,7 @@ class CustomScssForm extends AbstractForm {
 
 	/**
 	 * compile-error
-	 * @var null
+	 * @var SystemException
 	 */
 	protected $error = null;
 	
@@ -119,9 +118,9 @@ class CustomScssForm extends AbstractForm {
 		$this->saved();
 		
 		// show success
-		WCF::getTPL()->assign(array(
+		WCF::getTPL()->assign([
 			'success' => true
-		));
+		]);
 	}
 	
 	/**
